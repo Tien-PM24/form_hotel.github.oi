@@ -136,10 +136,10 @@
     $loaiPhong = $_POST["loaiPhong"];
     $in = strtotime ($_POST["in"]);
     $out = strtotime ($_POST["out"]); 
-    $soNgayThue = ($out - $in) / (60*60*24);
+    $soNgayThue = ($out - $in) /60/60/24;
     $tienPhong = $soNgayThue * $loaiPhong;
     $service = $giat + $an + $tam;
-    $total = $tienAnThem + $service + $tienPhong
+    $total = $tienAnThem + $service + $tienPhong;
     ?>
 
     <div class="container">
@@ -191,7 +191,7 @@
                 </div>
                 <div class="item-bill">
                     <label for="">Rental hours:</label>
-                    <input type="text" value = "<?php echo $soNgayThue ?>" readonly="true"> day
+                    <input type="text" value = "<?php echo $soNgayThue ?>" readonly="true"> days
                 </div>
                 <div class="item-bill">
                     <label for="">Money for meal:</label>
